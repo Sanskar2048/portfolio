@@ -1,0 +1,84 @@
+{
+    "home": {
+        "Name-first": "Sanskar",
+        "Name-last": "Sarawgi",
+        "Profile-name": "Web Developer",
+        "Date-of-birth": "24/01/2001",
+        "Email": "ss9814@srmist.edu.in",
+        "Phone-no": "8382004559",
+        "fb-url": "https://www.facebook.com/sanskar.sarawagi.79/",
+        "ig-url": "https://www.instagram.com/sarawgisanskar/",
+        "li-url": "https://www.linkedin.com/in/sanskar-sarawgi-a967a4190/",
+        "gh-url": "https://github.com/Sanskar2048"
+    },
+    "portfolio": {
+        "map": {
+            "Qualification": {
+                "Class 10": {
+                    "table": "false",
+                    "context": "study in Rani lakshmi bai public School jhansi score 80%"
+                },
+                "Class 12": {
+                    "table": "false",
+                    "context": "study in macro vision acadmey jhansi score 85%"
+                },
+                "College": {
+                    "table": "false",
+                    "context": "study in shri ramasuami memorial ktr persuing degree in btech computer science branch core"
+                }
+            },
+            "Skill": {
+                "Web Developement": {
+                    "table": "true",
+                    "html": "⭐ ⭐ ⭐ ⭐",
+                    "css": "⭐ ⭐ ⭐ ⭐",
+                    "javascript": "⭐ ⭐ ⭐",
+                    "flask": "⭐ ⭐ ⭐",
+                    "django": "⭐",
+                    "react": "⭐",
+                    "p5.js": "⭐ ⭐ ⭐"
+                },
+                "App Developement": {
+                    "table": "true",
+                    "Android Studio": "⭐ ⭐",
+                    "java Android sudio library":"⭐ ⭐ ⭐"
+                },
+                "Programing language": {
+                    "table": "true",
+                    "c language": "⭐ ⭐ ⭐ ⭐",
+                    "c++ language": "⭐ ⭐ ⭐ ⭐",
+                    "JAVA language(core)": "⭐ ⭐",
+                    "Python": "⭐ ⭐ ⭐ ⭐",
+                    "SQL(My sql)": "⭐ ⭐ ⭐ ⭐",
+                    "javascript": "⭐ ⭐ ⭐"
+                }
+            }
+        },
+        "cards": [
+            {
+                "img": "dsaf",
+                "title": "Web App",
+                "heading": "Resume",
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias commodi quidem fugit, earum cum tempore.",
+                "link": "#",
+                "date": "21 July 2018"
+            },
+            {
+                "img": "dsaf",
+                "title": "Web App",
+                "heading": "Online booking System",
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias commodi quidem fugit, earum cum tempore.",
+                "link": "#",
+                "date": "19 May 2018"
+            },
+            {
+                "img": "dsaf",
+                "title": "Web App",
+                "heading": "Spelling cheker",
+                "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias commodi quidem fugit, earum cum tempore.",
+                "link": "#",
+                "date": "19 May 2018"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+document.querySelectorAll(".nav_button")[1].classList.add("nav_button_select");

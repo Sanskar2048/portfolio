@@ -1,0 +1,56 @@
+{% extends "navbar.html" %}
+
+
+{% block head %}
+<link rel="stylesheet" href="static\css\contact.css">
+{% endblock %}
+
+{% block theme %}
+<nav class="{{theme}}">
+{% endblock %}
+
+{% block body %}
+<div class="box">
+    <h1 class="front-text text-white">Contact Form</h1>
+    <h2 class="front-text text-white">Sorry for the inconvenience we are here to help you click on contact us and send the problem we will try to replay you soon</h2><label class="btn-open" for="frmContactForm"><i
+            class="far fa-envelope"></i><span class="ml-half">Contact US</span></label><input type="checkbox"
+        id="frmContactForm" />
+    <div class="contact-modal">
+        <div class="contact-form">
+            <form>
+                <div class="contact-wrapper">
+                    <div class="contact-section">
+                        <h2 class="p-none m-none mb-quarter text-white"><i class="far fa-envelope"></i><span
+                                class="ml-half">Contact Me</span></h2>
+                    </div>
+                    <div class="contact-section">
+                        <div class="form-item"><input id="txtFullName" type="text"
+                                placeholder="Full Name (Optional)" autocomplete="off" /><label class="lbl-floating" for="txtFullName">Full
+                                Name</label><i class="icon text-white fas fa-user"></i></div>
+                        <div class="form-item"><input id="txtEmail" type="email" placeholder="E-Mail Address" autocomplete="off" /><label
+                                class="lbl-floating" for="txtEmail">E-Mail Address</label><i
+                                class="icon text-white fas fa-at"></i></div>
+                        <div class="form-item"><textarea id="txtContent" placeholder="Your message to the developer"
+                                rows="5"></textarea><label class="lbl-floating" for="txtContent">Your message to the
+                                developer</label><i class="icon text-white far fa-comment"></i></div>
+                    </div>
+                    <div class="contact-section text-right">
+                        <label class="contact-cancel" for="frmContactForm">
+                            <i class="fas fa-times-circle"></i>
+                            <span class="ml-quarter">Cancel</span>
+                        </label>
+                        <button class="btn-open ml-whole" type="submit">
+                            <i class="far fa-paper-plane"></i>
+                            <span class="ml-half">Send</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="static/javascript/contact.js"></script>
+{% endblock %}

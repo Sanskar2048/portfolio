@@ -1,0 +1,285 @@
+{% extends "navbar.html" %}
+
+
+{% block head %}
+<link rel="stylesheet" href="static\css\button.css">
+<link rel="stylesheet" href="static\css\portfolio.css">
+<link rel="stylesheet" href="static\css\projectcard.css">
+
+{% endblock %}
+
+{% block theme %}
+<nav class="{{theme}}">
+{% endblock %}
+
+{% block body %}
+{%for heading in portfolio_para.map%}
+<div class="portfolio-box">
+    <span class="title">{{heading}}</span>
+    <div class="map">
+        <ul>
+            {%for title in portfolio_para.map[heading]%}
+            <li><span class="dot"></span>
+                <span>
+                    <h3>{{title}}</h3>
+
+                    <br>
+
+                    {% if portfolio_para.map[heading][title]["table"] == "false" %}
+                    <p>{{portfolio_para.map[heading][title]["context"]}}</p>
+                    {% else %}
+                        <table class="rate">
+                        {%for item in portfolio_para.map[heading][title]%}
+                            {% if portfolio_para.map[heading][title][item] == "true" %}
+                            {% else %}
+                            <tr>
+                                <td>{{item}}</td>
+                                <td style="text-align: start;">{{portfolio_para.map[heading][title][item]}}</td>
+                            </tr>
+                            {%endif%}
+                        {%endfor%}
+                        </table>
+                    {% endif %}
+                </span>
+            </li>
+            {%endfor%}
+        </ul>
+    </div>
+</div>
+{%endfor%}
+<!-- <div class="portfolio-box">
+    <span class="title">Qualification</span>
+    <div class="map">
+        <ul>
+            <li><span class="dot"></span>
+                <span>
+                    <h3>
+                        Class 10
+                    </h3>
+                    <br>
+                    <p>
+                        study in Rani lakshmi bai public School
+                        jhansi score 80%
+                    </p>
+                </span>
+            </li>
+            <li><span class="dot"></span>
+                <span>
+                    <h3>
+                        Class 12
+                    </h3>
+                    <br>
+                    <p>
+                        study in macro vision acadmey
+                        jhansi score 85%
+                    </p>
+                </span>
+            </li>
+            <li><span class="dot"></span>
+                <span>
+                    <h3>
+                        college
+                    </h3>
+                    <br>
+                    <p>
+                        study in shri ramasuami memorial ktr
+                        persuing degree in btech computer science
+                        branch core
+                    </p>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div> 
+
+<div class="portfolio-box">
+    <span class="title">Skill</span>
+    <div class="map">
+        <ul>
+            <li><span class="dot"></span>
+                <span>
+                    <h3>
+                        Web Developement
+                    </h3>
+                    <br>
+                    <table class="rate">
+                        <tr>
+                            <td>html</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>css</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>javascript</td>
+                            <td>⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>flask</td>
+                            <td>⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>django</td>
+                            <td>⭐</td>
+                        </tr>
+                        <tr>
+                            <td>react</td>
+                            <td>⭐</td>
+                        </tr>
+                        <tr>
+                            <td>p5.js</td>
+                            <td>⭐ ⭐ ⭐</td>
+                        </tr>
+                    </table>
+                </span>
+            </li>
+            <li><span class="dot"></span>
+                <span>
+                    <h3>
+                        App Developement
+                    </h3>
+                    <br>
+                    <p>
+                        Android Studio<br>
+                        java Android sudio library<br>
+                    </p>
+                </span>
+            </li>
+            <li><span class="dot"></span>
+                <span>
+                    <h3>
+                        Programing language
+                    </h3>
+                    <br>
+                    <table class="rate">
+                        <tr>
+                            <td>c language</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>c++ language</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>JAVA language(core)</td>
+                            <td>⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>c++ language</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>Python</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>SQL(My sql)</td>
+                            <td>⭐ ⭐ ⭐ ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>javascript</td>
+                            <td>⭐ ⭐ ⭐</td>
+                        </tr>
+                    </table>
+                </span>
+            </li>
+
+        </ul>
+    </div>
+</div>-->
+
+<section>
+    <span class="title">Project</span>
+{%for card in portfolio_para.cards%}
+    <div class="blog-card" style='background-image: url(/static/image/profileImage.jpg);'>
+        <div class="content-mask">
+            <span class="category">{{card["title"]}}</span>
+            <h1>{{card["heading"]}}</h1>
+            <p>{{card["detail"]}}
+            </p>
+            <button class="btn draw-border">Project Link</button>
+            <div class="post-detail">
+                <span class="icon"><svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true"
+                        data-prefix="far" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="date"> {{card["date"]}}</span>
+            </div>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+
+{%endfor%}
+</section>
+<!--<section>
+    <span class="title">Project</span>
+    <div class="blog-card" style="background-image: url(/static/image/profileImage.jpg);">
+        <div class="content-mask">
+            <span class="category">Web App</span>
+            <h1>Resume</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias commodi quidem fugit, earum cum tempore.
+            </p>
+            <button class="btn draw-border">Draw Border</button>
+            <div class="post-detail">
+                <span class="icon"><svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true"
+                        data-prefix="far" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
+                        </path>
+                    </svg>
+                </span>
+                <span class="date">21 July 2018</span>
+            </div>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+    
+    <div class="blog-card"  style="background-image: url(/static/image/profileImage.jpg);">
+        <div class="content-mask">
+            <span class="category">Web App</span>
+            <h1>Online Booking System</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eos deserunt enim dicta est vel?</p>
+            <button class="btn draw-border">Draw Border</button>
+            <div class="post-detail">
+                <span class="icon"><svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true"
+                        data-prefix="far" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
+                        </path>
+                    </svg></span><span class="date">19 May 2018</span>
+            </div>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+    <div class="blog-card " style="background-image: url(/static/image/profileImage.jpg);">
+        <div class="content-mask">
+            <span class="category">Web App</span>
+            <h1>Spelling cheker</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eos deserunt enim dicta est vel?</p>
+            <button class="btn draw-border">Draw Border</button>
+            <div class="post-detail">
+                <span class="icon"><svg class="svg-inline--fa fa-calendar-alt fa-w-14" aria-hidden="true"
+                        data-prefix="far" data-icon="calendar-alt" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z">
+                        </path>
+                    </svg></span><span class="date">19 May 2018</span>
+            </div>
+        </div>
+        <div class="horizontal"></div>
+    </div>
+</section>-->
+
+{% endblock %}
+
+{% block js %}
+<script src="static/javascript/portfolio.js"></script>
+{% endblock %}

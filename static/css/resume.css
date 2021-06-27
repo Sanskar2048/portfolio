@@ -1,0 +1,20 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Roboto Slab', serif;
+    -ms-overflow-style: none;  
+     scrollbar-width: none;
+}
+*::-webkit-scrollbar{
+	display: none;
+}
+img{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+@media screen and (max-width: 1024px) {
+    img{
+        margin-left: 10%;
+        transform: translateX(50%);
+    }
+}

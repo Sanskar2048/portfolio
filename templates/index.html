@@ -1,0 +1,78 @@
+{% extends "navbar.html" %}
+
+
+
+{% block head %} 
+<link rel="stylesheet" href="static\css\card.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block theme %}
+<nav class="{{theme}}">
+{% endblock %}
+
+{% block body %} 
+<aside class="profile-card">
+
+    <header>
+    
+        <!-- here’s the avatar -->
+        <a href="http://victory-design.ru/">
+            <img src="static/image/profileImage.jpg" style="width: 8em; height: 8em;" />
+        </a>
+        
+        <!-- the username -->
+        <h1>{{home_para['Name-first']}} {{home_para['Name-last']}}</h1>
+        
+        <!-- and role or location -->
+        <h2>{{home_para['Profile-name']}}</h2>
+    
+    </header>
+
+    <!-- bit of a bio; who are you? -->
+    <div class="profile-bio">
+        <p>D.O.B - {{home_para['Date-of-birth']}}</p>
+        <br>
+        <p>Email - {{home_para['Email']}}</p>
+        <br>
+        <p>Phone no - {{home_para['Phone-no']}}</p>
+    </div>
+
+    <!-- some social links to show off -->
+    <ul class="profile-social-links">
+        
+        <li>
+            <a href="{{home_para['fb-url']}}" target="_blank">
+                <img src="https://img.icons8.com/nolan/64/facebook-new.png" style="width:2em; margin:0px; "/>
+            </a>
+        </li>
+        
+        <li>
+            <a href="{{home_para['ig-url']}}" target="_blank">
+                <img src="https://img.icons8.com/nolan/64/instagram-new.png" style="width:2em; margin:0px; "/>
+            </a>
+        </li>
+        
+        <li>
+            <a href="{{home_para['li-url']}}" target="_blank">
+                <img src="https://img.icons8.com/nolan/64/linkedin.png" style="width:2em; margin:0px; "/>
+            </a>
+        </li>
+
+        <li>
+            <a href="{{home_para['gh-url']}}" target="_blank">
+                <img src="https://img.icons8.com/nolan/64/github.png"  style="width:2em; margin:0px;" />
+            </a>
+        </li>
+        
+        <!-- add or remove social profiles as you see fit -->
+    
+    </ul>
+
+</aside>
+{% endblock %}
+
+{% block js %} 
+<script src="static/javascript/index.js"></script>
+{% endblock %}
